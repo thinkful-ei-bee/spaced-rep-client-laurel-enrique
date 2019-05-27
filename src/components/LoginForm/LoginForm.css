@@ -7,3 +7,13 @@
     text-align: end;
     background-color: white;
 }
+.login-form div{
+    margin-bottom: 3px;
+}
+
+.Button{
+    padding:5px;
+    border-radius:5px;
+    color:black;
+
+}
