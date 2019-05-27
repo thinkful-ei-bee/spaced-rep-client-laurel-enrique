@@ -30,10 +30,10 @@ class Header extends Component {
 
   renderLoginLink() {
     return (
-      <nav>
-        <Link to='/login'>Login</Link>
+      <nav >
+        <Link className='header-link login' to='/login'>Login</Link>
         {' '}
-        <Link to='/register'>Sign up</Link>
+        <Link className='header-link register' to='/register'>Sign up</Link>
       </nav>
     )
   }

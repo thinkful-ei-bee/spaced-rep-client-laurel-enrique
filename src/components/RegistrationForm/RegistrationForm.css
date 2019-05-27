@@ -1,0 +1,25 @@
+.registration-form{
+    border:1px solid black;
+    padding:30px;
+    max-width: fit-content;
+    margin:auto;
+    border-radius:10px;
+    text-align: end;
+    background-color: white;
+}
+
+.registration-form div{
+    margin-bottom: 3px;
+}
+footer{
+    margin-top:10px;
+    
+}
+footer .Button{
+    padding:5px;
+    border-radius:5px;
+
+}
+footer a{
+    font-size:small;
+}
