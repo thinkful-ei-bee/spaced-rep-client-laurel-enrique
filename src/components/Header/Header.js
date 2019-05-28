@@ -40,7 +40,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header>
+      <header className="main-link">
         <h1>
           <Link to='/'>
             Spaced repetition

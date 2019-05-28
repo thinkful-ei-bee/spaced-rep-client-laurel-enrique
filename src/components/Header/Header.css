@@ -5,11 +5,24 @@
     text-decoration: none;
     color:white;
     background-color: blueviolet;
-    
 }
 
 header{
     
     width:100vw;
  
+}
+
+.register {
+    margin-left: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    /* display: flex;
+    flex-direction: row; */
+}
+.login {
+    position: absolute;
+    right: 100px;
+    top: 10px;
 }
