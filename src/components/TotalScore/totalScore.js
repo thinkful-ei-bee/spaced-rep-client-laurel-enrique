@@ -2,11 +2,13 @@ import React from 'react';
 
 export default function TotalScore(props){
     
-    let totalScore=props.score
+    let numCorrect=props.correct
+    let numWrong= props.wrong
+    let total= numCorrect + numWrong
     return(
         <div>
             TOTAL SCORE:
-        {totalScore}
+        {numCorrect} / {total}
         </div>
     )
 }

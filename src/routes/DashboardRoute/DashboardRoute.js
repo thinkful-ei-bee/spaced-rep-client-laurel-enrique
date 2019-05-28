@@ -7,9 +7,9 @@ import TotalScore from '../../components/TotalScore/totalScore'
 class DashboardRoute extends Component {
   state={
     words:[],
-    rightCount: [5],
-    wrongCount:[9],
-   
+    rightCount: [],
+    wrongCount:[],
+    totalScore:[],
   }
 
 
@@ -27,15 +27,18 @@ class DashboardRoute extends Component {
           words: [...this.state.words, res.words[i]]
         })
       }
-      let correct= this.state.words.map(i =>{ return i.correct_count})
-      let wrong= this.state.words.map(i=>{return i.incorrect_count})
-      let numCorrect = correct.reduce((a,b) => {return a+b})
+      let correct= this.state.words.map(i =>{ return i.correct_count}) //make an array of all the correct counts
+      let wrong= this.state.words.map(i=>{return i.incorrect_count}) // make an array of all the incorrects
+      
+      let numCorrect = correct.reduce((a,b) => {return a+b})// get sums
       let numWrong=wrong.reduce((a,b)=>{ return a+b})
-      let total=`${numCorrect}/${numCorrect + numWrong}`
+     
+     
+      
       this.setState({
-        rightCount:correct,
-        wrongCount:wrong,
-        totalScore:total,
+        rightCount:numCorrect,
+        wrongCount:numWrong,
+        
       })
     })
   }
@@ -56,7 +59,7 @@ class DashboardRoute extends Component {
       <div> 
         LANGUAGE: {this.state.name}
          
-      <TotalScore score={this.state.totalScore}/>
+      <TotalScore correct={this.state.rightCount} wrong={this.state.wrongCount}/>
         
       <section>
     {this.renderWords(this.state.words)}       
