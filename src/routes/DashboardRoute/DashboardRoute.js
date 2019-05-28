@@ -3,14 +3,16 @@ import LangService from '../../services/lang-service'
 import Word from '../../components/Word/Word'
 import { Link} from 'react-router-dom';
 import TotalScore from '../../components/TotalScore/totalScore'
+import LangContext from '../../contexts/LangContext';
 
 class DashboardRoute extends Component {
   state={
     words:[],
-    rightCount: [],
-    wrongCount:[],
-    totalScore:[],
+    numCorrect: [],
+    numWrong:[],
+  
   }
+  
 
 
   componentDidMount(){
@@ -22,6 +24,7 @@ class DashboardRoute extends Component {
           [key]:value,
         })
       }
+     
       for(let i=0; i<res.words.length; i++){
         this.setState({
           words: [...this.state.words, res.words[i]]
@@ -36,7 +39,7 @@ class DashboardRoute extends Component {
      
       
       this.setState({
-        rightCount:numCorrect,
+        correctCount:numCorrect,
         wrongCount:numWrong,
         
       })
@@ -54,19 +57,35 @@ class DashboardRoute extends Component {
  
 
   render(){ 
+
+    const value = {       // haven't fully implemented context yet... just setting up template
+      language:this.state.name,    
+      words:this.state.words,               
+      correctCount:this.state.correctCount,
+      wrongCount:this.state.wrongCount,
+    }
+
  
     return (
-      <div> 
-        LANGUAGE: {this.state.name}
-         
-      <TotalScore correct={this.state.rightCount} wrong={this.state.wrongCount}/>
-        
-      <section>
-    {this.renderWords(this.state.words)}       
 
-      </section>
-      <button><Link to={`/learn`}>Start Learning</Link></button>
-      </div>
+      <LangContext.Provider value={value}>
+
+        <div> 
+          LANGUAGE: {this.state.name}
+          
+          <TotalScore correct={this.state.correctCount} wrong={this.state.wrongCount}/>
+          
+          <section>
+
+            {/* possibly turn below into its own component */}
+            {this.renderWords(this.state.words)}       
+
+          </section>
+
+          <button><Link to={`/learn`}>Start Learning</Link></button>
+
+        </div>
+      </LangContext.Provider>
     );
   }
 }
