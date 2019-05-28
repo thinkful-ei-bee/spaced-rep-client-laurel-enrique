@@ -15,10 +15,10 @@ footer{
     margin-top:10px;
     
 }
-footer .Button{
+footer {
     padding:5px;
     border-radius:5px;
-
+    margin-right: 55px;
 }
 footer a{
     font-size:small;
