@@ -5,11 +5,24 @@
     text-decoration: none;
     color:white;
     background-color: blueviolet;
-    
 }
 
 header{
     
     width:100vw;
  
+}
+
+.login, .register {
+    float: right;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    vertical-align: text-top;
+}
+.main-link {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
 }
