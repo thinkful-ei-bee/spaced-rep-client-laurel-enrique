@@ -8,13 +8,9 @@ class DashboardRoute extends Component {
     words:[],
     rightCount: [],
     wrongCount:[],
+    totalCount:[],
   }
-  // The app gets my language and words progress from the server
-  // - I'm shown my language
-  // - I'm shown the words to learn for the language
-  // - I'm shown my count for correct and incorrect responses for each word
-  // - I'm given a button/link to start learning
-  // - I'm shown the total score for guessing words correctly
+
 
   componentDidMount(){
     LangService.getUserLanguage()
@@ -30,7 +26,16 @@ class DashboardRoute extends Component {
           words: [...this.state.words, res.words[i]]
         })
       }
-
+      let correct= this.state.words.map(i =>{ return i.correct_count})
+      let wrong= this.state.words.map(i=>{return i.incorrect_count})
+      let numCorrect = correct.reduce((a,b) => {return a+b})
+      let numWrong=wrong.reduce((a,b)=>{ return a+b})
+      let total=`${numCorrect}/${numCorrect + numWrong}`
+      this.setState({
+        rightCount:correct,
+        wrongCount:wrong,
+        totalScore:total,
+      })
     })
   }
 
@@ -42,46 +47,16 @@ class DashboardRoute extends Component {
     return word
   }
 
-  handleLearningClick=()=>{
+ 
 
-  }
-
-  // calcTotalScore=(words)=>{
-    
-  //   let right=[];
-  //   let wrong=[];
-    // for(let i=0; i<words.length; i++){
-    //   if(words[i].correct_count !== null){
-    //     right.push(words[i].correct_count) 
-    //   if(words[i].incorrect_count !== null){
-    //      wrong.push( words[i].incorrect_count)
-  
-    //     }
-
-//       }
-   
-    
-//     let rightCount = right.reduce((a,b) => a+b)
-//     let wrongCount = wrong.reduce((a,b) => a+b)
-
-//     this.setState({
-//       rightCount: rightCount,
-//       wrongCount:wrongCount,
-//     })
-
-//     return `${rightCount} / ${wrongCount}`
-//   }
-// }
-
-
-
-  render(){
-  
+  render(){ 
  
     return (
       <div> 
         LANGUAGE: {this.state.name}
-        {/* <div>TOTAL SCORE: {this.calcTotalScore(this.state.words)}</div> */}
+        <div>TOTAL SCORE: 
+      {this.state.totalScore}
+        </div>
       <section>
     {this.renderWords(this.state.words)}       
 
