@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import LangService from '../../services/lang-service'
 import Word from '../../components/Word/Word'
 import { Link} from 'react-router-dom';
+import TotalScore from '../../components/TotalScore/totalScore'
 
 class DashboardRoute extends Component {
   state={
     words:[],
-    rightCount: [],
-    wrongCount:[],
-    totalCount:[],
+    rightCount: [5],
+    wrongCount:[9],
+   
   }
 
 
@@ -54,9 +55,9 @@ class DashboardRoute extends Component {
     return (
       <div> 
         LANGUAGE: {this.state.name}
-        <div>TOTAL SCORE: 
-      {this.state.totalScore}
-        </div>
+         
+      <TotalScore score={this.state.totalScore}/>
+        
       <section>
     {this.renderWords(this.state.words)}       
 
