@@ -13,16 +13,16 @@ header{
  
 }
 
-.login, .register {
-    float: right;
+.register {
     margin-left: 10px;
-    display: flex;
-    flex-direction: row;
-    vertical-align: text-top;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    /* display: flex;
+    flex-direction: row; */
 }
-.main-link {
-    float: right;
-    display: flex;
-    flex-direction: row;
-    padding-left: 40px;
+.login {
+    position: absolute;
+    right: 100px;
+    top: 10px;
 }
