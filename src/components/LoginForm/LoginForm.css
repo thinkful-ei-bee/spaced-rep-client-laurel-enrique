@@ -9,11 +9,13 @@
 }
 .login-form div{
     margin-bottom: 3px;
+    padding: 10px;
 }
 
 .Button{
     padding:5px;
     border-radius:5px;
     color:black;
-
+    /* margin-right: 90px;
+    margin-top: 40px; */
 }
