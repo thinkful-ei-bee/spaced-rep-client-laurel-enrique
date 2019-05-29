@@ -47,7 +47,7 @@ class LearningRoute extends Component {
         <p>Your total score is: {this.state.totalScore}</p>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
-          <input type='text' id='learn-guess-input' name='guess'  onChange={this.handleChange.bind(this)} required/>
+          <input type='text' id='learn-guess-input' name='guess-input'  onChange={this.handleChange.bind(this)} required/>
           <button type='submit'>Submit your answer</button>
         </form>
         <p>{`You have answered this word correctly ${this.state.wordCorrectCount} times.`}</p>
