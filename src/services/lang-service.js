@@ -35,9 +35,9 @@ const LangService ={
         method: 'POST',
             headers: {
               'authorization': `Bearer ${TokenService.getAuthToken()}`,
+              'content-type': 'application/json',
             },
             body: JSON.stringify({word})
-
       })
       .then(res =>
         (!res.ok)

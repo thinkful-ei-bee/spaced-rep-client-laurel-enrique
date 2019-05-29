@@ -18,14 +18,9 @@ class LearningRoute extends Component {
           [key]:value,
         })
       }
-      console.log(this.state)
+      // console.log(this.state)
     })
   }
-
-
-
-
-
 
 
 
@@ -33,16 +28,24 @@ class LearningRoute extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
-    console.log(this.state)
+    // console.log(this.state)
   }
 
-  
+
   handleSubmit = (e) =>{
     e.preventDefault()
+  
     LangService.postWord(this.state.guess_input)
-      .then(res => {
-        console.log(res)
-      })
+    .then(res => {
+      console.log(res)
+      // for(const [key,value] of Object.entries(res)){
+      //   this.setState({
+      //     [key]:value,
+      //   })
+      // }
+      // console.log(this.state)
+    })
+     
   }
 
   render() {
