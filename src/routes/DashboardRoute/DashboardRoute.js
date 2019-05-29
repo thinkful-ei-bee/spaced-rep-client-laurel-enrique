@@ -10,7 +10,7 @@ class DashboardRoute extends Component {
     words:[],
     numCorrect: [],
     numWrong:[],
-  
+    total_score: [] 
   }
   
 
@@ -24,7 +24,7 @@ class DashboardRoute extends Component {
           [key]:value,
         })
       }
-     
+      console.log(this.state);
       for(let i=0; i<res.words.length; i++){
         this.setState({
           words: [...this.state.words, res.words[i]]
@@ -49,7 +49,7 @@ class DashboardRoute extends Component {
   renderWords=(words)=>{
     
      let word= words.map((item,index)=>{
-     return <Word word={item}key={index}/>
+       return <li key={index}><Word word={item} /></li>
     })
     return word
   }
@@ -57,7 +57,8 @@ class DashboardRoute extends Component {
  
 
   render(){ 
-
+    let words= this.renderWords(this.state.words);
+      
     const value = {       // haven't fully implemented context yet... just setting up template
       language:this.state.name,    
       words:this.state.words,               
@@ -69,22 +70,22 @@ class DashboardRoute extends Component {
     return (
 
       <LangContext.Provider value={value}>
-
+        <main> 
+        
         <div> 
-          LANGUAGE: {this.state.name}
-          
-          <TotalScore correct={this.state.correctCount} wrong={this.state.wrongCount}/>
-          
-          <section>
-
-            {/* possibly turn below into its own component */}
-            {this.renderWords(this.state.words)}       
-
-          </section>
-
-          <button><Link to={`/learn`}>Start Learning</Link></button>
-
+            <section>
+              <h2>
+                {this.state.name}
+              </h2>
+      
+                <TotalScore score={this.state.total_score} />         
+             <h3>Words to practice</h3>
+             <ul>{words}</ul>
+          <button><Link to={`/learn`}>Start practicing</Link></button>
+            </section>
         </div>
+        
+        </main>
       </LangContext.Provider>
     );
   }

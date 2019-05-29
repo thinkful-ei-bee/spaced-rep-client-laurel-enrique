@@ -5,9 +5,9 @@ export default function Word(props){
 
     return(
         <div>
-            {props.word.original}<br/>
-            correct: {props.word.correct_count}
-            wrong: {props.word.incorrect_count}
+            <h4>{props.word.original}</h4>        
+            <p>correct answer count: {props.word.correct_count}</p>
+            <p>incorrect answer count: {props.word.incorrect_count}</p>        
         </div>
     )
 }
