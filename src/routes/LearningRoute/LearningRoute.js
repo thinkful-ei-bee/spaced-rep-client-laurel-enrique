@@ -5,7 +5,7 @@ class LearningRoute extends Component {
   constructor(){
     super();
     this.state ={
-
+      guess_input:''
     }
   }
   static contextType = LangContext
@@ -35,9 +35,14 @@ class LearningRoute extends Component {
     });
     console.log(this.state)
   }
+
+  
   handleSubmit = (e) =>{
     e.preventDefault()
-    //post method goes here
+    LangService.postWord(this.state.guess_input)
+      .then(res => {
+        console.log(res)
+      })
   }
 
   render() {
@@ -45,9 +50,9 @@ class LearningRoute extends Component {
       <main>
         <h2>Translate the word:</h2><span>{this.state.nextWord}</span>
         <p>Your total score is: {this.state.totalScore}</p>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit.bind(this)}>
           <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
-          <input type='text' id='learn-guess-input' name='guess-input'  onChange={this.handleChange.bind(this)} required/>
+          <input type='text' id='learn-guess-input' name='guess_input'  onChange={this.handleChange.bind(this)} required/>
           <button type='submit'>Submit your answer</button>
         </form>
         <p>{`You have answered this word correctly ${this.state.wordCorrectCount} times.`}</p>
