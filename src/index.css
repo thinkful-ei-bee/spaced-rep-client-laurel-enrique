@@ -40,3 +40,17 @@ h4 {
   font-style: italic;
   font-weight: 2000;
 }
+.score-form {
+  border: 5px solid rgb(161, 133, 81);
+  border-radius: 10%;
+  box-shadow: 10px 10px 5px grey;
+  background-color: white;
+  padding-top: 20px;
+  margin-left: 30px;
+  margin-right: 50px;
+  padding-bottom: 30px;
+  margin-top: 20px;
+}
+form {
+  padding-top: 40px;
+}
