@@ -30,14 +30,14 @@ const LangService ={
         
 
     },
-    postWord(word){
+    postWord(guess){
       return fetch(`${config.API_ENDPOINT}/language/guess`, {
         method: 'POST',
             headers: {
               'authorization': `Bearer ${TokenService.getAuthToken()}`,
               'content-type': 'application/json',
             },
-            body: JSON.stringify({word})
+            body: JSON.stringify({guess})
       })
       .then(res =>
         (!res.ok)

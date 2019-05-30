@@ -51,15 +51,19 @@ class LearningRoute extends Component {
   render() {
     return (
       <main className="score-form">
+         
         <h2>Translate the word:</h2><span>{this.state.nextWord}</span>
-        <p>Your total score is: {this.state.totalScore}</p>
+        
         <form onSubmit={this.handleSubmit.bind(this)}>
           <label htmlFor='learn-guess-input'>What's the translation for this word? </label>
           <input type='text' id='learn-guess-input' name='guess_input'  onChange={this.handleChange.bind(this)} required/>
           <button type='submit'>Submit your answer</button>
         </form>
-        <p>{`You have answered this word correctly ${this.state.wordCorrectCount} times.`}</p>
-        <p>{`You have answered this word incorrectly ${this.state.wordIncorrectCount} times.`}</p>
+        <div className="DisplayScore">
+          <p>{`Your total score is: ${this.state.totalScore}`}</p>
+          <p>{`You have answered this word correctly: ${this.state.wordCorrectCount} times.`}</p>
+          <p>{`You have answered this word incorrectly: ${this.state.wordIncorrectCount} times.`}</p>
+        </div>
       </main>
     );
   }
