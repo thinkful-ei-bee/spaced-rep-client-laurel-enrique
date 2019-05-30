@@ -7,7 +7,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fffff0;
+  background-color: ivory;
   font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,4 +15,28 @@ body {
 
 :root {
   --font-size: calc(10px + 1vmin);
+}
+li {
+    list-style-type: none;
+}
+.word-card {
+  border: 5px solid rgb(161, 133, 81);
+  border-radius: 10%;
+  /* background-color: rgb(107, 185, 185); */
+  box-shadow: 10px 10px 5px grey;
+  background-color: white;
+  padding: 0;
+  margin-left: 30px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+p {
+  text-decoration: underline;
+}
+h4 {
+  font-size: 30px;
+  padding: 0px;
+  font-style: italic;
+  font-weight: 2000;
 }
