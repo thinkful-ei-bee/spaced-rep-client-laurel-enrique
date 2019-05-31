@@ -59,14 +59,15 @@ class LearningRoute extends Component {
     //when the user has not entered anything
     let displayForm = null;
 
-    if(this.state.answer === this.state.guess_input) {
-      message = true;
+    if(this.state.isCorrect) {
+      message = <><h2>You were correct! :D</h2></>;
+      displayForm = <><button type='submit'>Try another word!</button></>
     } else {
       message = <><h2>Good try, but not quite right :(</h2>
       <p>{`The correct translation for ${this.state.preWord} was ${this.state.answer} and you chose ${this.state.guess_input}!`}</p></>;
       //if the user entered the wrong word
       displayForm = <><button type='submit'>Try another word!</button></>
-    }
+    } 
 
     //for if there is no answer
     if (!this.state.answer) {

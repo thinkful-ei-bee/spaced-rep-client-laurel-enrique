@@ -127,7 +127,7 @@ describe(`User story: Answer feedback`, function() {
       cy.get('form').submit().wait('@postListGuessCorrect')
     })
 
-    it(`gives feedback the word was correct`, () => {
+    it.only(`gives feedback the word was correct`, () => {
       //  cypress fixtures has buggy behaviour, this works around it o_O
       const fixtures = []
       Cypress.Promise.all([
@@ -149,11 +149,12 @@ describe(`User story: Answer feedback`, function() {
               'have.text',
               `You were correct! :D`,
             )
-          cy.get('.DisplayFeedback p')
-            .should(
-              'have.text',
-              `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`,
-            )
+    // casey said to temporarily comment this out
+          // cy.get('.DisplayFeedback p')
+          //   .should(
+          //     'have.text',
+          //     `The correct translation for ${languageHeadFixture.nextWord} was ${incorrectFixture.answer} and you chose ${guess}!`,
+          //   )
           cy.get('button')
             .should(
               'have.text',
