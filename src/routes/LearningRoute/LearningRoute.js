@@ -102,9 +102,9 @@ class LearningRoute extends Component {
         {displayForm}      
         <div className="DisplayScore">
           <p>{`Your total score is: ${this.state.totalScore}`}</p>
-          {/* <p>{`You have answered this word correctly: ${this.state.wordCorrectCount} times.`}</p>
-          <p>{`You have answered this word incorrectly: ${this.state.wordIncorrectCount} times.`}</p> */}
         </div>
+          <p>{`You have answered this word correctly ${this.state.wordCorrectCount} times.`}</p>
+          <p>{`You have answered this word incorrectly ${this.state.wordIncorrectCount} times.`}</p>
       </main>
     );
   }
