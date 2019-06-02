@@ -18,7 +18,7 @@ class DashboardRoute extends Component {
   componentDidMount(){
     LangService.getUserLanguage()
     .then(res => {
-      
+      console.log(res);
       for(const [key,value] of Object.entries(res.language)){
         this.setState({
           [key]:value,
