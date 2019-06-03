@@ -13,6 +13,12 @@
     margin-bottom: 3px;
     padding: 10px;
 }
+#registration-name-input, #registration-username-input, #registration-password-input {
+    margin-right: 90px;
+}
+.account {
+    margin-right: 130px;
+}
 footer{
     margin-top:10px;
     

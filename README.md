@@ -1,7 +1,5 @@
 # Spaced Repetition Capstone
 
-## Setup
-
 To setup the application
 
 1. Fork and clone the project to your machine
