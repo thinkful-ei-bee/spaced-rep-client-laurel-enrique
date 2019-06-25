@@ -44,7 +44,7 @@ class LoginForm extends Component {
   render() {
     const { error } = this.state
     return (
-      <div>
+      <div role="form" aria-label="User Information">
       <form
         className='login-form'
         onSubmit={this.handleSubmit}

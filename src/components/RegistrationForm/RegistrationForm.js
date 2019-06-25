@@ -40,7 +40,7 @@ class RegistrationForm extends Component {
   render() {
     const { error } = this.state
     return (
-      <div role="form" aria-label="User Information">
+      <div role="form" aria-label="Registration Information">
       <form className='registration-form'
         onSubmit={this.handleSubmit}
       >
