@@ -40,6 +40,7 @@ class RegistrationForm extends Component {
   render() {
     const { error } = this.state
     return (
+      <div role="form" aria-label="User Information">
       <form className='registration-form'
         onSubmit={this.handleSubmit}
       >
@@ -78,14 +79,15 @@ class RegistrationForm extends Component {
             required
           />
         </div>
-        <footer>
-          <Button type='submit'>
+        <footer role="link">
+          <Button type='submit' role="button">
             Sign up
           </Button><br/>
           {' '}
           <Link to='/login' className="account">Already have an account?</Link>
         </footer>
       </form>
+      </div>
     )
   }
 }
