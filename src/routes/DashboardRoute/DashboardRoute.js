@@ -69,7 +69,7 @@ class DashboardRoute extends Component {
  
     return (
 
-      <LangContext.Provider value={value}>
+      <LangContext.Provider value={value} role="main">
         <main> 
         
         <div> 

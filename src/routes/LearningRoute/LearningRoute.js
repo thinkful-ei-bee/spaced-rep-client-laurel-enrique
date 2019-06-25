@@ -95,6 +95,7 @@ class LearningRoute extends Component {
     // console.log(message);
 
     return (
+      <div role="main">
       <main className="score-form">
         <div className="DisplayFeedback">
         {message}
@@ -106,6 +107,7 @@ class LearningRoute extends Component {
           <p>{`You have answered this word correctly ${this.state.wordCorrectCount} times.`}</p>
           <p>{`You have answered this word incorrectly ${this.state.wordIncorrectCount} times.`}</p>
       </main>
+      </div>
     );
   }
 }
