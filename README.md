@@ -29,7 +29,7 @@ Clone or fork this repository and [the server repository](https://github.com/thi
 TZ='UTC'
 MIGRATION_DB_HOST=127.0.0.1
 MIGRATION_DB_PORT=5432
-MIGRATION_DB_NAME=rendezvous
+MIGRATION_DB_NAME=(database name here)
 MIGRATION_DB_USER=(the username for your new database)
 MIGRATION_DB_PASS=(password for your new database)
 DB_URL="postgresql://(user):(password)@localhost/(database here)"
