@@ -42,7 +42,7 @@ class LearningRoute extends Component {
   //keeps track of word user just finished submitting
   this.setState({preWord: this.state.nextWord});
 
-  LangService.postWord(this.state.guess_input)
+  LangService.postWord(this.state.guess_input.toLowerCase())
   .then(res => {
     for(const [key,value] of Object.entries(res)){
       this.setState({
