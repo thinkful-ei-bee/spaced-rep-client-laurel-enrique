@@ -38,11 +38,12 @@ class LearningRoute extends Component {
 
   handleSubmit = (e) =>{
     e.preventDefault()
- 
+    const guess = this.state.guess_input.toLowerCase()
+ console.log(guess)
   //keeps track of word user just finished submitting
   this.setState({preWord: this.state.nextWord});
 
-  LangService.postWord(this.state.guess_input.toLowerCase())
+  LangService.postWord(guess)
   .then(res => {
     for(const [key,value] of Object.entries(res)){
       this.setState({
